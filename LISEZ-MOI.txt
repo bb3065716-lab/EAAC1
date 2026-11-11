@@ -1,0 +1,24 @@
+EAAC v1.3 — APK via GitHub
+==========================
+1. github.com -> New repository (nom: eaac) -> Create.
+   (Si le dépôt existe déjà : supprimez l'ancien contenu de www/ avant d'envoyer le nouveau.)
+2. "uploading an existing file" : glissez TOUT le contenu de ce dossier
+   (www, assets, package.json, capacitor.config.json) -> Commit changes.
+   ATTENTION : www contient maintenant un sous-dossier lib/ — envoyez bien les dossiers entiers.
+3. Add file -> Create new file. Nom: .github/workflows/build-apk.yml
+   Collez le contenu de .github/workflows/build-apk.yml (fourni ici) -> Commit changes.
+   (déjà en place si vous avez envoyé le dossier .github)
+4. Onglet Actions -> "Build EAAC APK" -> attendre ~5 min (rond vert).
+   Si rien ne démarre: Run workflow.
+5. Cliquez sur l'exécution -> Artifacts -> EAAC-apk -> telechargez, dezippez:
+   app-debug.apk -> installez sur le telephone.
+
+NOUVEAUTÉS v1.3
+- HAUTEURS & SITE : altitudes PT/PO/BUT/éclatements, site (mil), profil, masque, trajectoire.
+  DEM accepté : GeoTIFF (.tif) ou SRTM (.hgt / .hgt.gz). Bouton "CHARGER DEM" -> choisir le fichier
+  dans la mémoire du téléphone. Le DEM est mémorisé : rechargé automatiquement au lancement suivant.
+  Plusieurs dalles possibles (bouton AJOUTER). Bouton AUTO (internet) = téléchargement SRTM.
+- CROQUIS : vraie carte (satellite / plan / relief) placée par les coordonnées, zoom tactile.
+  Pointage PT / PO / BUT / ÉCLAT sur la carte -> remplit les champs.
+  CHARGER CARTE = carte GeoTIFF personnelle (comme la version EXE).
+- Les tuiles déjà consultées restent visibles hors ligne (cache). Fond de carte = internet.
